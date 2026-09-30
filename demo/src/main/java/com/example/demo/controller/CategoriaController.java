@@ -25,4 +25,15 @@ public class CategoriaController {
     public Categoria crearCategoria(@RequestBody Categoria categoria) {
         return categoriaRepository.save(categoria);
     }
+
+    @PutMapping("/{id}")
+    public Categoria actualizarCategoria(@PathVariable String id, @RequestBody Categoria categoria) {
+        categoria.setId(id);
+        return categoriaRepository.save(categoria);
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminarCategoria(@PathVariable String id) {
+        categoriaRepository.deleteById(id);
+    }
 }
