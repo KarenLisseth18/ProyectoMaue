@@ -1,0 +1,782 @@
+/* ================================
+   CONFIGURACIÓN GENERAL
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #fffaf7;
+    color: #4b3832;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+    height: 78px;
+    padding: 0 7%;
+    background-color: #fffaf7;
+    border-bottom: 1px solid #f0e2dc;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #a85d68;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.menu a {
+    color: #604943;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #b76572;
+}
+
+.link-carrito {
+    position: relative;
+}
+
+.contador-carrito {
+    position: absolute;
+    top: -12px;
+    right: -15px;
+
+    min-width: 20px;
+    height: 20px;
+
+    padding: 2px 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #b76572;
+    color: white;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+/* ================================
+   INICIO
+================================ */
+
+.inicio {
+    min-height: calc(100vh - 78px);
+}
+
+.hero {
+    min-height: 560px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 10%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 247, 242, 0.98),
+            rgba(255, 247, 242, 0.75),
+            rgba(255, 247, 242, 0.25)
+        ),
+        radial-gradient(
+            circle at 80% 50%,
+            #f5d9d5,
+            #fceee9 45%,
+            #fffaf7 75%
+        );
+}
+
+.hero-contenido {
+    max-width: 650px;
+}
+
+.hero-pequeno {
+    margin-bottom: 18px;
+
+    color: #b76572;
+
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin: 0 0 25px;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.08;
+
+    font-weight: normal;
+    color: #4b3832;
+}
+
+.hero-contenido > p:not(.hero-pequeno) {
+    max-width: 500px;
+
+    margin-bottom: 35px;
+
+    color: #725d56;
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.boton-principal {
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    background-color: #b76572;
+    color: white;
+
+    border-radius: 30px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.boton-principal:hover {
+    background-color: #994f5b;
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   BIENVENIDA
+================================ */
+
+.bienvenida {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding: 100px 30px;
+
+    text-align: center;
+}
+
+.seccion-pequena {
+    margin-bottom: 18px;
+
+    color: #b76572;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.bienvenida h2 {
+    margin: 0 0 25px;
+
+    font-family: Georgia, serif;
+
+    font-size: 42px;
+    line-height: 1.2;
+
+    font-weight: normal;
+}
+
+.bienvenida > p:last-child {
+    max-width: 620px;
+
+    margin: auto;
+
+    color: #78635c;
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* ================================
+   TÍTULOS DE PÁGINA
+================================ */
+
+.titulo-pagina {
+    padding: 75px 20px 55px;
+
+    text-align: center;
+
+    background-color: #fdf0eb;
+
+    border-bottom: 1px solid #f2dfd8;
+}
+
+.titulo-pagina p {
+    margin: 0 0 12px;
+
+    color: #b76572;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.titulo-pagina h1 {
+    margin: 0 0 12px;
+
+    font-family: Georgia, serif;
+
+    font-size: 48px;
+    font-weight: normal;
+
+    color: #4b3832;
+}
+
+.titulo-pagina span {
+    color: #806b64;
+
+    font-size: 16px;
+}
+
+
+/* ================================
+   PRODUCTOS
+================================ */
+
+.pagina-productos {
+    min-height: calc(100vh - 78px);
+}
+
+.productos {
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    padding: 60px 30px 90px;
+
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(240px, 1fr)
+    );
+
+    gap: 28px;
+}
+
+.producto {
+    padding: 28px;
+
+    background-color: white;
+
+    border: 1px solid #f1e5df;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(90, 60, 50, 0.06);
+
+    transition: 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 35px rgba(90, 60, 50, 0.1);
+}
+
+.producto h3 {
+    margin: 0 0 15px;
+
+    font-family: Georgia, serif;
+
+    font-size: 23px;
+    font-weight: normal;
+
+    color: #4b3832;
+}
+
+.precio {
+    margin: 0 0 12px;
+
+    color: #b76572;
+
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.producto p:not(.precio) {
+    color: #806b64;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+.producto button {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 25px;
+
+    background-color: #b76572;
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.producto button:hover {
+    background-color: #994f5b;
+}
+
+
+/* ================================
+   CARRITO
+================================ */
+
+.pagina-carrito {
+    min-height: calc(100vh - 78px);
+    padding-bottom: 80px;
+}
+
+.carrito {
+    max-width: 1000px;
+
+    margin: 55px auto;
+
+    padding: 35px;
+
+    background-color: white;
+
+    border: 1px solid #f0e2dc;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(90, 60, 50, 0.07);
+}
+
+.carrito h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    font-family: Georgia, serif;
+
+    font-size: 28px;
+    font-weight: normal;
+}
+
+.carrito > p {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    color: #8a756d;
+}
+
+.item-carrito {
+    display: grid;
+
+    grid-template-columns: 1fr auto auto;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #eee2dc;
+}
+
+.item-carrito h3 {
+    margin: 0 0 8px;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+    font-weight: normal;
+}
+
+.item-carrito p {
+    margin: 0;
+
+    color: #b76572;
+
+    font-weight: bold;
+}
+
+.cantidad {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.cantidad button {
+    width: 32px;
+    height: 32px;
+
+    border: 1px solid #e3d1ca;
+    border-radius: 50%;
+
+    background-color: #fffaf7;
+
+    color: #6d5149;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+.cantidad button:hover {
+    background-color: #f8e4df;
+}
+
+.item-carrito > button {
+    padding: 8px 15px;
+
+    border: none;
+    border-radius: 20px;
+
+    background-color: #f4dfdc;
+
+    color: #9b5660;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.item-carrito > button:hover {
+    background-color: #eccbc6;
+}
+
+.total {
+    margin-top: 30px;
+
+    text-align: right;
+
+    color: #4b3832;
+
+    font-size: 22px;
+}
+
+
+/* ================================
+   ADMINISTRADOR
+================================ */
+
+.pagina-admin {
+    min-height: calc(100vh - 78px);
+    padding-bottom: 80px;
+}
+
+.admin-panel {
+    max-width: 1100px;
+
+    margin: 55px auto;
+
+    padding: 35px;
+
+    background-color: white;
+
+    border: 1px solid #f0e2dc;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(90, 60, 50, 0.07);
+}
+
+.admin-panel > h2 {
+    margin-top: 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.admin-panel h3 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+    color: #604943;
+
+    font-size: 20px;
+}
+
+.admin-panel form {
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 30px;
+
+    padding: 22px;
+
+    background-color: #fffaf7;
+
+    border: 1px solid #f0e2dc;
+
+    border-radius: 15px;
+}
+
+.admin-panel input[type="text"],
+.admin-panel input[type="number"] {
+    min-width: 180px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #e2d3cd;
+    border-radius: 8px;
+
+    outline: none;
+
+    background-color: white;
+
+    color: #4b3832;
+}
+
+.admin-panel input:focus {
+    border-color: #c57b85;
+}
+
+.admin-panel form button {
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #b76572;
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.admin-panel form button:hover {
+    background-color: #994f5b;
+}
+
+.disponibilidad {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0 10px;
+
+    color: #6e5952;
+
+    font-size: 14px;
+}
+
+.categoria-admin,
+.producto-admin {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #eee2dc;
+}
+
+.categoria-admin strong,
+.producto-admin strong {
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    color: #4b3832;
+}
+
+.categoria-admin p,
+.producto-admin p {
+    margin: 6px 0 0;
+
+    color: #806b64;
+
+    font-size: 14px;
+}
+
+.categoria-admin button,
+.producto-admin button {
+    margin-left: 8px;
+
+    padding: 9px 15px;
+
+    border: none;
+    border-radius: 20px;
+
+    background-color: #f4dfdc;
+
+    color: #8f4f58;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.categoria-admin button:hover,
+.producto-admin button:hover {
+    background-color: #eccbc6;
+}
+
+.titulo-productos-admin {
+    margin-top: 50px !important;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 18px 25px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .menu {
+        gap: 18px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 500px;
+
+        padding: 60px 25px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .bienvenida {
+        padding: 70px 25px;
+    }
+
+    .bienvenida h2 {
+        font-size: 34px;
+    }
+
+    .titulo-pagina {
+        padding: 55px 20px 40px;
+    }
+
+    .titulo-pagina h1 {
+        font-size: 38px;
+    }
+
+    .productos {
+        padding: 40px 20px 70px;
+    }
+
+    .carrito,
+    .admin-panel {
+        margin: 35px 20px;
+
+        padding: 25px;
+    }
+
+    .item-carrito {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .cantidad {
+        justify-content: flex-start;
+    }
+
+    .item-carrito > button {
+        width: fit-content;
+    }
+
+    .categoria-admin,
+    .producto-admin {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .categoria-admin button,
+    .producto-admin button {
+        margin-left: 0;
+        margin-right: 8px;
+    }
+
+    .admin-panel form {
+        flex-direction: column;
+    }
+
+    .admin-panel input[type="text"],
+    .admin-panel input[type="number"],
+    .admin-panel form button {
+        width: 100%;
+    }
+}
