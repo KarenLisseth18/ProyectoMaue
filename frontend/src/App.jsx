@@ -1,12 +1,14 @@
+
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
+import { Routes, Route, Navigate } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 
 import Inicio from "./pages/Inicio";
 import Productos from "./pages/Productos";
 import CarritoPage from "./pages/CarritoPage";
 import Admin from "./pages/Admin";
+import Login from "./pages/Login";
 
 function App() {
 
@@ -78,9 +80,12 @@ function App() {
         0
     );
 
+    const usuario = JSON.parse(
+        localStorage.getItem("usuarioMaue")
+    );
+
     return (
         <>
-
             <Navbar
                 cantidadCarrito={cantidadCarrito}
             />
@@ -119,14 +124,27 @@ function App() {
 
                 <Route
                     path="/admin"
-                    element={<Admin />}
+                    element={
+                        usuario ? (
+                            usuario.rol === "administrador" ? (
+                                <Admin />
+                            ) : (
+                                <Navigate
+                                    to="/productos"
+                                    replace
+                                />
+                            )
+                        ) : (
+                            <Navigate
+                                to="/login"
+                                replace
+                            />
+                        )
+                    }
                 />
 
             </Routes>
-
         </>
-
-        
     );
 }
 
