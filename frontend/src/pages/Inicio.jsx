@@ -23,7 +23,10 @@ function Inicio() {
                         con dedicación y mucho amor.
                     </p>
 
-                    <Link to="/productos" className="boton-principal">
+                    <Link
+                        to="/productos"
+                        className="boton-principal"
+                    >
                         Ver productos
                     </Link>
 

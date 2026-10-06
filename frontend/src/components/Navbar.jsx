@@ -1,4 +1,3 @@
-
 import { Link, useNavigate } from "react-router-dom";
 import logoMaue from "../assets/logo/maue-logo.jpg";
 
@@ -43,7 +42,6 @@ function Navbar({ cantidadCarrito }) {
                             {cantidadCarrito}
                         </span>
                     )}
-
                 </Link>
 
                 {usuario?.rol === "administrador" && (

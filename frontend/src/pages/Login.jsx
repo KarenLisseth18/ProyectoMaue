@@ -1,45 +1,99 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
 
     const [correo, setCorreo] = useState("");
-    const [password, setPassword] = useState("");
+    const [contrasena, setContrasena] = useState("");
+    const [error, setError] = useState("");
+
+    const navigate = useNavigate();
 
     const iniciarSesion = (e) => {
+
         e.preventDefault();
 
-        console.log("Correo:", correo);
-        console.log("Contraseña:", password);
+        setError("");
+
+        if (
+            correo === "admin@maue.com" &&
+            contrasena === "admin123"
+        ) {
+
+            localStorage.setItem(
+                "usuarioMaue",
+                JSON.stringify({
+                    correo,
+                    rol: "administrador"
+                })
+            );
+
+            navigate("/admin");
+
+            return;
+        }
+
+        if (
+            correo === "usuario@maue.com" &&
+            contrasena === "usuario123"
+        ) {
+
+            localStorage.setItem(
+                "usuarioMaue",
+                JSON.stringify({
+                    correo,
+                    rol: "usuario"
+                })
+            );
+
+            navigate("/productos");
+
+            return;
+        }
+
+        setError("Correo o contraseña incorrectos.");
     };
 
     return (
-        <div className="login-container">
+        <main className="pagina-login">
 
-            <div className="login-box">
+            <section className="login-contenedor">
 
-                <h2>Iniciar sesión</h2>
+                <p>MAÚ</p>
+
+                <h1>Iniciar sesión</h1>
+
+                <span>
+                    Ingresa para continuar
+                </span>
 
                 <form onSubmit={iniciarSesion}>
 
-                    <label>Correo electrónico</label>
-
                     <input
                         type="email"
-                        placeholder="Ingrese su correo"
+                        placeholder="Correo electrónico"
                         value={correo}
-                        onChange={(e) => setCorreo(e.target.value)}
+                        onChange={(e) =>
+                            setCorreo(e.target.value)
+                        }
                         required
                     />
-
-                    <label>Contraseña</label>
 
                     <input
                         type="password"
-                        placeholder="Ingrese su contraseña"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Contraseña"
+                        value={contrasena}
+                        onChange={(e) =>
+                            setContrasena(e.target.value)
+                        }
                         required
                     />
+
+                    {error && (
+                        <p className="mensaje-error">
+                            {error}
+                        </p>
+                    )}
 
                     <button type="submit">
                         Iniciar sesión
@@ -47,9 +101,9 @@ function Login() {
 
                 </form>
 
-            </div>
+            </section>
 
-        </div>
+        </main>
     );
 }
 
