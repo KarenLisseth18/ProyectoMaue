@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoMaue from "../assets/logo/maue-logo.jpg";
 
 function Navbar({ cantidadCarrito }) {
 
@@ -6,7 +7,7 @@ function Navbar({ cantidadCarrito }) {
         <nav className="navbar">
 
             <Link to="/" className="logo">
-                Maué
+                <img src={logoMaue} alt="Logo Maué" />
             </Link>
 
             <div className="menu">
@@ -28,6 +29,10 @@ function Navbar({ cantidadCarrito }) {
                         </span>
                     )}
 
+                </Link>
+
+                <Link to="/login">
+                    Iniciar sesión
                 </Link>
 
                 <Link to="/admin">

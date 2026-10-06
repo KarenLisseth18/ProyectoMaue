@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-
+import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 
 import Inicio from "./pages/Inicio";
@@ -113,6 +113,11 @@ function App() {
                 />
 
                 <Route
+                    path="/login"
+                    element={<Login />}
+                />
+
+                <Route
                     path="/admin"
                     element={<Admin />}
                 />
@@ -120,6 +125,8 @@ function App() {
             </Routes>
 
         </>
+
+        
     );
 }
 
